@@ -24,7 +24,7 @@ int maxItemsInKSteps(const vector<int>& row, int start, int k) {
         
         // Calculate the starting position
         int leftPos = max(start - leftMoves, 0);
-        int rightPos = min(start + rightMoves, n - 1);
+        int rightPos = min(leftPos + rightMoves, n - 1);
         
         // Calculate the total number of items picked if we move leftMoves steps left
         // and rightMoves steps right
@@ -42,8 +42,9 @@ int maxItemsInKSteps(const vector<int>& row, int start, int k) {
 
 int main() {
     // Example row and parameters
-    //vector<int> row = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3};
-    vector<int> row = {9, 0, 0, 0, 1, 7, 2, 4, 0, 0, 9};
+    
+    //vector<int> row = {9, 0, 0, 0, 1, 7, 2, 4, 0, 0, 9};
+    vector<int> row = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3};
     int start = 5;  // Starting position of the robot
     int k = 4;      // Maximum number of steps
 

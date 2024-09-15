@@ -1,8 +1,16 @@
 /*
-Q1.Robot can move 2 way only (X+Y, Y) or (X, Y+X) & you have to reach from (A, B) to (C, D)
-	- Asked for schodo code only & approach
-	- I explained with backtracking
+Q.Find a way to reach from point (A, B) to point (C, D), 
+  Robot can move from (X, Y) to (X+Y, Y) or (X, Y+X).
+  - If reached than print the path 
+  - else print "can not reach"
 
+    - reachable
+        int a = 2, b = 3;
+        int c = 12, d = 5;
+    
+    - Can not reach
+        int a = 2, b = 3;
+        int c = 12, d = 13;
 */
 
 #include <iostream>
@@ -33,19 +41,23 @@ bool Navigate(int a, int b, int c, int d, stack<pair<int,int>>&res){
 
 int main()
 {
+    int a = 2, b = 3, c = 12, d = 5;
+    //int a = 2, b = 3, c = 12, d = 13;
+
     stack<pair<int,int>>res;
-    if(Navigate(2, 3, 19, 13, res))
+    if(Navigate(a, b, c, d, res))
     {
-        cout<<"reached\n";
+        cout<<"\nReached\n\n";
         
         while(!res.empty())
         {   auto itr = res.top();
             res.pop();
             cout<<itr.first<<", "<<itr.second<<endl;
         }
+        cout<<endl;
     }
     else
-        cout<<"can not reached\n";
+        cout<<"\nCan not reached\n\n";
 
     return 0;
 }
