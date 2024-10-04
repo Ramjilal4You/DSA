@@ -1,6 +1,8 @@
 Readme for DSA related topics
 
 # 01. Array
+	- ProductArrayPuzzle -> Need To record -> Need to Upload
+	
 
 # 02. Matrix
 
