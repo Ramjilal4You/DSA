@@ -11,9 +11,15 @@
 *   - Level Order Traversal     - LevelOrderTraversal()
 
 */
-#include"TreeNode.hxx"
 #include <iostream>
 using namespace std;
+
+struct Node{
+    int data;
+    Node* left;
+    Node* right;
+};
+
 
 void AddNode(Node** ioRoot, int iData){
 
@@ -74,6 +80,14 @@ void PostOrderTraversal(Node* root){
     cout<<root->data<<" ";
 }
 
+void LevelOrderTraversal(Node* root){
+    if(root ==nullptr)
+        return ;
+
+    //TODO
+
+}
+
 int main(){
     Node *root = nullptr;
 
@@ -95,6 +109,7 @@ int main(){
     InOrderTraversal : 1 2 3 4 5 6 7
     PreOrderTraversal : 4 2 1 3 6 5 7
     PostOrderTraversal : 1 3 2 5 7 6 4
+    LevelOrderTraversal : 4 2 6 1 3 5 7
     */
 
     cout<<"\nInOrderTraversal : ";
@@ -105,6 +120,9 @@ int main(){
 
     cout<<"\nPostOrderTraversal : ";
     PostOrderTraversal(root);
+
+    cout<<"\nLevelOrderTraversal : ";
+    LevelOrderTraversal(root);
 
     cout<<"\n\n";
 
