@@ -23,7 +23,8 @@ string equilibrium(vector<int> &arr) {
     int n = arr.size();
     int left=0, right=sum;
     for(int i=0; i<n; i++){
-        right = sum-arr[i]-left;
+        //right = sum-arr[i]-left;
+        right -= arr[i];
         if(left==right)
             return "true";
         left += arr[i];
