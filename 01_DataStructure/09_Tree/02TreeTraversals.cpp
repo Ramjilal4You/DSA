@@ -12,6 +12,7 @@
 
 */
 #include <iostream>
+#include <queue>
 using namespace std;
 
 struct Node{
@@ -84,7 +85,18 @@ void LevelOrderTraversal(Node* root){
     if(root ==nullptr)
         return ;
 
-    //TODO
+    queue<Node*> myQueue;
+    myQueue.push(root);
+
+    while (!myQueue.empty()){
+        Node* node = myQueue.front();
+        myQueue.pop();
+
+        cout<<node->data<<" ";
+
+        if(node->left) myQueue.push(node->left);
+        if(node->right) myQueue.push(node->right);
+    }
 
 }
 
